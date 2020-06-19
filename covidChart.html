@@ -22,7 +22,7 @@
 // declare-initialize global variables
 var URL = "https://api.covid19api.com/summary";
 var covidJson;
-var newConfirmedOver1000;
+var newConfirmedOver500;
 
 // load API content into variables
 // code below modified from: 
@@ -53,13 +53,13 @@ function loadContent() {
       }
 
       chartData.data.datasets[0].backgroundColor = 
-        "rgb(214, 0, 0)";
+        "rgba(214, 0, 0, 0)";
       chartData.data.datasets[1].backgroundColor = 
-        "rgb(117, 117, 117)";
+        "rgba(117, 117, 117, 0)";
       chartData.data.datasets[0].label = 
-        'Total Confirmed case';
+        'New Confirmed';
       chartData.data.datasets[1].label = 
-        'Total Recovered';
+        'New Deaths';
       chartData.data.labels = 
         newConfirmedOver500.map( (x) => x.Slug );
       chartData.data.datasets[0].data = 

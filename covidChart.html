@@ -43,7 +43,7 @@ function loadContent() {
       // instead: write code to use filter() method!
       newConfirmedOver100 = [];
 	    for (let c of covidJson.Countries) {
-        if (c.NewConfirmed > 100) {
+        if (c.NewConfirmed > 500) {
           newConfirmedOver100.push({ 
             "Slug": c.Slug, 
             "NewConfirmed": c.NewConfirmed, 

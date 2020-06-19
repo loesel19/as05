@@ -22,7 +22,7 @@
 // declare-initialize global variables
 var URL = "https://api.covid19api.com/summary";
 var covidJson;
-var newConfirmedOver500;
+var newConfirmedOver100;
 
 // load API content into variables
 // code below modified from: 
@@ -41,10 +41,10 @@ function loadContent() {
       
       // loop through countries in API summary
       // instead: write code to use filter() method!
-      newConfirmedOver500 = [];
+      newConfirmedOver100 = [];
 	    for (let c of covidJson.Countries) {
-        if (c.NewConfirmed > 500) {
-          newConfirmedOver500.push({ 
+        if (c.NewConfirmed > 100) {
+          newConfirmedOver100.push({ 
             "Slug": c.Slug, 
             "NewConfirmed": c.NewConfirmed, 
             "NewDeaths": c.NewDeaths
@@ -61,11 +61,11 @@ function loadContent() {
       chartData.data.datasets[1].label = 
         'New Deaths';
       chartData.data.labels = 
-        newConfirmedOver500.map( (x) => x.Slug );
+        newConfirmedOver100.map( (x) => x.Slug );
       chartData.data.datasets[0].data = 
-        newConfirmedOver500.map( (x) => x.NewConfirmed );
+        newConfirmedOver100.map( (x) => x.NewConfirmed );
       chartData.data.datasets[1].data = 
-        newConfirmedOver500.map( (x) => x.NewDeaths );
+        newConfirmedOver100.map( (x) => x.NewDeaths );
       var myChart = new Chart(ctx, chartData); 
 
     }

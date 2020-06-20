@@ -48,7 +48,7 @@ function loadContent() {
           newConfirmedOver500.push({ 
             "Slug": c.Slug, 
             "NewConfirmed": c.NewConfirmed, 
-            "TotalDeaths": c.TotalsDeaths
+            "TotalDeaths": c.TotalDeaths
           });
         }
       }
@@ -65,7 +65,7 @@ function loadContent() {
       chartData.data.datasets[0].data = 
         newConfirmedOver500.map( (x) => x.NewConfirmed );
       chartData.data.datasets[1].data = 
-        newConfirmedOver500.map( (x) => x.NewDeaths );
+        newConfirmedOver500.map( (x) => x.TotalDeaths );
       var myChart = new Chart(ctx, chartData); 
 
     }

@@ -32,6 +32,7 @@ function loadContent() {
   // send AJAX call
   var xhttp = new XMLHttpRequest();
   // when ready...
+	console.log("made it here l35");
   xhttp.onreadystatechange = function() {
     // if (when) AJAX call is successful...
     if (this.readyState == 4 && this.status == 200) {
@@ -52,7 +53,7 @@ function loadContent() {
           });
         }
       }
-console.log("made it here");
+console.log("made it here l55");
       chartData.data.datasets[0].backgroundColor = 
         "rgba(214, 0, 0, 0)";
       chartData.data.datasets[1].backgroundColor = 
